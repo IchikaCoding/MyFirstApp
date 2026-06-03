@@ -6,3 +6,4 @@ Console.WriteLine("This is the second line.");
 // 改行なし
 Console.Write("Hello");
 Console.Write("Ichika");
+Console.Write("♡");
