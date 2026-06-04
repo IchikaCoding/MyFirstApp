@@ -60,7 +60,7 @@ bool processedCustomer;
 //string LastName = "ichika";
 
 string LastName;
-//LastName = "ichika";
+LastName = "ichika";
 Console.WriteLine($"LastName: {LastName}");
 
 string Name = "Bob";
@@ -68,9 +68,25 @@ Console.WriteLine($"Name: {Name}");
 
 // messageってインスタンスなの？これは変数じゃないの？
 // 型推論ができるときのみ使用可能→初期化しないなら使えない
-// varはどうして使うの？
+//varはどうして使うの？
 // あとから型を決めたい時。
 // 初期化するなら型がわかりきっているからvarで省略してかけたらラク
 var message = "Hello, Ichika";
 
 
+// ---------------------------------
+
+// ボブと3と34.4を格納
+// 正しいデータ型を選択
+// 出力：Hello, Bob! You have 3 messages in your inbox. The temperature is 34.4 celsius.
+
+string bob = "Bob";
+int count = 3;
+double temperature = 34.4;
+
+// 後ろにスペースいれると見やすいよ
+Console.Write($"Hello, {bob}! ");
+Console.Write($"You have {count} messages in your inbox. ");
+Console.Write($"The temperature is {temperature} celsius.");
+
+// ===========================
