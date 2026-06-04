@@ -56,4 +56,21 @@ bool processedCustomer;
 
 // =============2026/06/04=================
 
+// 値の代入はset操作というらしい
+//string LastName = "ichika";
+
+string LastName;
+//LastName = "ichika";
+Console.WriteLine($"LastName: {LastName}");
+
+string Name = "Bob";
+Console.WriteLine($"Name: {Name}");
+
+// messageってインスタンスなの？これは変数じゃないの？
+// 型推論ができるときのみ使用可能→初期化しないなら使えない
+// varはどうして使うの？
+// あとから型を決めたい時。
+// 初期化するなら型がわかりきっているからvarで省略してかけたらラク
+var message = "Hello, Ichika";
+
 
