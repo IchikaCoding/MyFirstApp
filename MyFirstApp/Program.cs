@@ -89,4 +89,27 @@ Console.Write($"Hello, {bob}! ");
 Console.Write($"You have {count} messages in your inbox. ");
 Console.Write($"The temperature is {temperature} celsius.");
 
-// ===========================
+// =========文字エスケープ シーケンス============
+
+Console.WriteLine("Hello\nWorld!");
+// 間にタブのスペースが入る
+Console.WriteLine("Hello\tWorld!");
+Console.WriteLine("Hello \"World\"");
+
+Console.WriteLine("c:\\source\\repos");
+
+
+Console.WriteLine("Generating invoices for customer \"Contoso Corp\" ... \n");
+Console.WriteLine("Invoice: 1021\t\tComplete!");
+// WriteLine()は出力の前に改行をいれる
+Console.WriteLine("Invoice: 1022\t\tComplete!");
+// 1行空行を作成したいから先頭に\n
+// コロンのあとにスペースが欲しいから\tをいれる
+Console.Write("\nOutput Directory:\t");
+
+
+// =========逐語的文字列リテラル============
+
+// @ を使用すると、内側の文字列でエスケープされなくなる
+Console.WriteLine(@"    c:\source\repos    
+        (this is where your code goes)");
