@@ -1,4 +1,5 @@
-﻿// 改行あり
+﻿using MyFirstApp;
+// 改行あり
 // Consoleはクラス、WriteLine()はクラスのメソッド？
 // ""の中身はLiteral文字列
 
@@ -113,3 +114,61 @@ Console.Write("\nOutput Directory:\t");
 // @ を使用すると、内側の文字列でエスケープされなくなる
 Console.WriteLine(@"    c:\source\repos    
         (this is where your code goes)");
+
+#region いちがどんのひとりごと
+
+Console.WriteLine("こんちか✨️(´;ω;｀)");
+
+#endregion
+
+#region 2026-06-06
+
+// クラスを作成してみよう
+var dog = new Dog("ぽち",22); // コンストラクタで表示される年齢は22歳
+dog.Bark();
+// 代入？Ageのセット、書き込む処理をしている
+dog.Age = 25;
+// ここで表示するメソッドを使用
+dog.Display(); // 25歳って表示される
+
+
+
+// intとint[]で値が変化するかやってみよう！
+
+// 静的メソッドの利点はなに？
+static int Additon(int num)
+{
+    num = num + 10;
+    return num;
+}
+
+int n = 15;
+Console.WriteLine(Additon(n));  // 25
+Console.WriteLine(n);  // 15
+
+// 参照型
+static int[] ChangeFirst(int[] array)
+{
+    array[0] = 15;
+    return array;
+}
+
+int[] hairetsu = { 1, 2, 3 };
+//  ChangeFirstを実行した後に表示が変わるのかを調べる
+Console.WriteLine(ChangeFirst(hairetsu));　// System.Int32[]
+Console.WriteLine(hairetsu[0]); // 15
+Console.WriteLine(hairetsu[1]); // 2
+Console.WriteLine(hairetsu[2]); // 3
+
+
+
+int x = 5;
+int y = x; // yは5
+y = 100; // yは100
+Console.WriteLine(x); // 5。どうして？値型だから
+
+// ------------------------------コンストラクタ---------------------------
+
+
+
+#endregion
