@@ -1,4 +1,5 @@
 ﻿using MyFirstApp;
+using System.ComponentModel;
 // 改行あり
 // Consoleはクラス、WriteLine()はクラスのメソッド？
 // ""の中身はLiteral文字列
@@ -156,10 +157,10 @@ static int[] ChangeFirst(int[] array)
 int[] hairetsu = { 1, 2, 3 };
 //  ChangeFirstを実行した後に表示が変わるのかを調べる
 Console.WriteLine(ChangeFirst(hairetsu));　// System.Int32[]
+// for文で回したらこれをまとめて書けるかも！
 Console.WriteLine(hairetsu[0]); // 15
 Console.WriteLine(hairetsu[1]); // 2
 Console.WriteLine(hairetsu[2]); // 3
-
 
 
 int x = 5;
@@ -168,6 +169,35 @@ y = 100; // yは100
 Console.WriteLine(x); // 5。どうして？値型だから
 
 // ------------------------------コンストラクタ---------------------------
+
+
+
+#endregion
+
+#region 2026-06-07
+
+Console.WriteLine("===================2026-06-07==================="); 
+double result = MathHelper.Double(2);
+Console.WriteLine(result); // 4
+// インスタンスを作成してメソッドを実行するのが難しい
+var doubleInstance = new MathHelper();
+// staticメソッドだからインスタンスを作成出来ない
+//double resultTow = doubleInstance.Double(2);
+
+// ---------------staticの練習------------------
+
+// インスタンス不要。
+// countの中身をみてみよう
+int countNum = Sample.count;
+string appName = Sample.AppName;
+Console.WriteLine($"countNum: {countNum}, appName: {appName}"); // countNumは15、"MyApp"
+Sample.Hello();
+Sample.AppName = "Ichika's App";
+Console.WriteLine($"appName: {Sample.AppName}"); // "Ichika's App" →"MyApp"になった。なぜ？
+
+// これはエラー
+// 理由は、public や private、static などのアクセス修飾子はクラスのメンバー（フィールド・プロパティ・メソッド）に使うもの
+//static string name = "ichika";
 
 
 

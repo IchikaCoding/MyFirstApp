@@ -37,10 +37,16 @@ namespace MyFirstApp
         // コンストラクタ。戻り値なし。
         public Dog(string name, int age)
         {
-            _name = name;
+            this._name = name;
             _age = age;
 
             Console.WriteLine($"こんちか！{_name}({_age}歳)だよ、よろちく✨️");
+        }
+        // staticメソッドではthisで指名できない！
+        // インスタンスを作成しないからです
+        public static void StaticMethod()
+        {
+            //Console.WriteLine($"{this._name}さんが吠えた");
         }
     }
 }
