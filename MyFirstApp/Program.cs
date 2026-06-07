@@ -199,6 +199,9 @@ Console.WriteLine($"appName: {Sample.AppName}"); // "Ichika's App" →"MyApp"に
 // 理由は、public や private、static などのアクセス修飾子はクラスのメンバー（フィールド・プロパティ・メソッド）に使うもの
 //static string name = "ichika";
 
+#endregion
 
+
+#region 2026-06-08
 
 #endregion
