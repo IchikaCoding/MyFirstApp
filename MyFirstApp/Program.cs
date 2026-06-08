@@ -202,6 +202,34 @@ Console.WriteLine($"appName: {Sample.AppName}"); // "Ichika's App" →"MyApp"に
 #endregion
 
 
-#region 2026-06-08
+#region 2026-06-08(ラムダ式)
+
+//// 2倍してリターン
+//// 足し算を書いてみる
+//n => n * 2;
+
+//// ラムダ式は、複数の引数も行けます
+//(a, b) => a + b;
+
+//// 2倍にして返す
+//n => {
+//    int result = n * 2;
+//    return result;
+//}
+
+// Func<引数の型, 戻り値の型>
+Func<int, int> twice = n => n * 2;
+Console.WriteLine(twice(5));  // → 10
+
+// Func<入力1, 入力2, 戻り値>
+Func<int, int, int> add = (a, b) => a + b;
+Console.WriteLine(add(3, 4));  // → 7
+
+// Action（戻り値なし）
+// nameにはどうやって値を代入するの？
+// →この name には、greet を呼び出すときに渡した値が入ります。
+Action<string> greet = name => Console.WriteLine($"Hello, {name}");
+greet("いちか");  // → Hello, いちか
+
 
 #endregion
