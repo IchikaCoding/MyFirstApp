@@ -233,3 +233,20 @@ greet("いちか");  // → Hello, いちか
 
 
 #endregion
+
+
+#region 2026-06-09(LINQ)
+
+// モックデータをList形式で作成
+var mockData = new List<int> { 1, 2, 3, 4 };
+
+// 偶数と一致したらその数を代入する条件フィルター
+var evenNum = mockData.Where(n => n % 2 == 0);
+// 出力：evenNum: System.Linq.Enumerable+ListWhereIterator`1[System.Int32]
+Console.WriteLine($"evenNum: {evenNum}");
+// 元のlistの要素を2倍ずつする
+var twice2 = mockData.Select(n => n * 2);
+// 出力：twice2: System.Linq.Enumerable+ListSelectIterator`2[System.Int32,System.Int32]
+Console.WriteLine($"twice2: {twice2}");
+
+#endregion

@@ -9,11 +9,11 @@ namespace MyFirstApp
         // 名前のフィールド
         public string name = "まろ";
         // メソッドを2つ書く
-        public GetInfo()
+        public string GetInfo()
         {
             return $"猫: {name}";
         }
         // ラムダ式体験会
-        public GetInfo2() => $"猫: {name}";
+        public string GetInfo2() => $"猫: {name}";
     }
 }
