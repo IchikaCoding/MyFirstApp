@@ -281,6 +281,9 @@ Console.WriteLine("======================================");
 // 犬の年齢でもsortしてみよう
 
 List<string> aiNames = new List<string> { "Chappy", "Gemini", "Claude" };
+// TODO: new List<string>を省略してもいいらしい？！
+// varで宣言した時はnew を省略不可。だけど、型で宣言したときはオブジェクトで書けるよ！
+List<string> aiNames2 = ["Chappy", "Gemini", "Claude"];
 
 // => のうしろのnは、sortで条件をセットする
 var sorted = aiNames.OrderBy(n => n);
