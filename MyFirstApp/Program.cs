@@ -245,8 +245,59 @@ var evenNum = mockData.Where(n => n % 2 == 0);
 // 出力：evenNum: System.Linq.Enumerable+ListWhereIterator`1[System.Int32]
 Console.WriteLine($"evenNum: {evenNum}");
 // 元のlistの要素を2倍ずつする
+// JSでいうと、mapみたいなもの。一つずつの要素に対して処理するやつ。
 var twice2 = mockData.Select(n => n * 2);
 // 出力：twice2: System.Linq.Enumerable+ListSelectIterator`2[System.Int32,System.Int32]
-Console.WriteLine($"twice2: {twice2}");
+
+// 値を出力してみよう！
+// evenNumのListからコンソール出力
+foreach (var num in evenNum)
+{
+    Console.WriteLine(num);
+}
+
+// ToList()によって即時実行されるはずだからtempListをコンソールに表示するとリストの中身が見えると思ったのです。見えなかった。Why？
+var tempList = twice2.ToList();
+// 遅延実行だからそれをToList()で実行→その結果をカンマ区切りで表示した
+Console.WriteLine($"twice2: {string.Join(", ", tempList)}"); // twice2: 2, 4, 6, 8
+
+
+#endregion
+
+
+#region 2026-06-10(LINQ)
+
+// 条件は一つでも当てはまったらtrueになるの？
+var mockData2 = new List<int> { 1, 2, 3, 4 };
+bool hasLarge = mockData2.Any(n => n > 4); // false
+bool hasLarge2 = mockData2.Any(n => n > 1); // true
+Console.WriteLine($"hasLarge: {hasLarge}, hasLarge2: {hasLarge2}");
+
+
+// ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+Console.WriteLine("======================================");
+// リスト作成
+// 昇順sort（キーにしたいものをセット）
+// 犬の年齢でもsortしてみよう
+
+List<string> aiNames = new List<string> { "Chappy", "Gemini", "Claude" };
+
+// => のうしろのnは、sortで条件をセットする
+var sorted = aiNames.OrderBy(n => n);
+foreach (var item in sorted)
+{
+    Console.WriteLine(item);
+}
+Console.WriteLine("======================================");
+// 犬の年齢もあるリスト
+List<Ai> aiList = new List<Ai> { new Ai { Name = "Chappy", Age = 44 }, new Ai { Name = "Gemini", Age = 10}, new Ai { Name = "Claude", Age = 20 } };
+
+// 昇順sort（年齢順にする）.まだ実行されていない
+var sortedAi = aiList.OrderBy(n => n.Age);
+foreach (var item in sortedAi)
+{
+    // インスタンスからNameを表示する
+    Console.WriteLine(item.Name);
+}
 
 #endregion
