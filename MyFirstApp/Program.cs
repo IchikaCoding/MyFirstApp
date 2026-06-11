@@ -304,3 +304,23 @@ foreach (var item in sortedAi)
 }
 
 #endregion
+
+
+#region Ai要素のリストを作る方法を探す
+
+List<Ai> aiList2 = new List<Ai>
+{ 
+    new Ai { Name = "Chappy", Age = 44 },
+    new Ai { Name = "Gemini", Age = 10 },
+    new Ai { Name = "Claude", Age = 20 }
+};
+
+List<Ai> aiInfoList = new List<Ai>();
+Ai chappy = new Ai();
+chappy.Name = "Chappy";
+chappy.Age = 44;
+aiInfoList.Add(chappy);
+
+var chappy1 = aiInfoList[0];
+Console.WriteLine(chappy1.Name);
+#endregion
